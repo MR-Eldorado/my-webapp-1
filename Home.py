@@ -5,7 +5,6 @@ import time
 timestamp = time.strftime('%b %d %Y')
 timestamp2 = time.strftime('%b %d %Y %H:%M:%S')
 
-
 st.set_page_config(layout="wide")
 st.caption(':eye: Copyright to BCM')
 # st.write(timestamp2)
