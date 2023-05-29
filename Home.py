@@ -34,10 +34,6 @@ for index, task in enumerate(tasks):
         del st.session_state[task]
         st.experimental_rerun()
 
-# st.text_input(label=" ", placeholder='Add a new task', on_change=add_task, key='new task')
-
-# st.session_state
-
 st.divider()
 st.title(':white_check_mark: :green[Completed Tasks] :trophy:')
 st.divider()
