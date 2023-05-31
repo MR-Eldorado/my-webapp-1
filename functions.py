@@ -3,10 +3,16 @@ import zipfile
 import os
 import time
 
-
 TASKS_FILE = "/Users/Bhavan_1/Pycharm-Proj2/Webapp-1/tasks-list.txt"
 COMPLETED_TASKS = "/Users/Bhavan_1/Pycharm-Proj2/Webapp-1/completed-tasks.txt"
 timestamp = time.strftime('%b %d %Y')
+
+
+def my_clock():
+    while True:
+        print(time.strftime('%b %m %Y %H:%M:%S'), end="\r", flush=True)
+        time.sleep(1)
+
 
 if not os.path.exists('tasks-list.txt'):
     with open('tasks-list.txt', 'w') as file:

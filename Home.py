@@ -3,11 +3,12 @@ import functions as func
 import time
 
 timestamp = time.strftime('%b %d %Y')
-timestamp2 = time.strftime('%b %d %Y %H:%M:%S')
+timestamp2 = time.strftime('%b %d %Y %H:%M:%S %p')
 
 st.set_page_config(layout="wide")
+st.write(timestamp2)
 st.caption(':eye: Copyright to BCM')
-# st.write(timestamp2)
+
 
 st.title(':sun_with_face: :blue[_To-Do Task Organizer_] :writing_hand:')
 
@@ -25,7 +26,9 @@ def add_task():
 
 st.text_input(label=" ", placeholder='Add a new task', on_change=add_task, key='new task')
 
-for index, task in enumerate(tasks):
+tasks2 = func.get_todos()
+
+for index, task in enumerate(tasks2):
     task_selected = st.checkbox(task, key=task)
     if task_selected:
         func.complete_todos(task.strip() + ' ' + timestamp + '\n')
