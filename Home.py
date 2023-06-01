@@ -9,10 +9,9 @@ st.set_page_config(layout="wide")
 st.write(timestamp2)
 st.caption(':eye: Copyright to BCM')
 
-
 st.title(':sun_with_face: :blue[_To-Do Task Organizer_] :writing_hand:')
 
-st.subheader(':red[This is daily task organizer]')
+st.subheader('**:red[This is daily task organizer]**')
 st.write(":green[This app is to increase <b> productivity </b>]", unsafe_allow_html=True)
 
 tasks = func.get_todos()
@@ -26,9 +25,7 @@ def add_task():
 
 st.text_input(label=" ", placeholder='Add a new task', on_change=add_task, key='new task')
 
-tasks2 = func.get_todos()
-
-for index, task in enumerate(tasks2):
+for index, task in enumerate(tasks):
     task_selected = st.checkbox(task, key=task)
     if task_selected:
         func.complete_todos(task.strip() + ' ' + timestamp + '\n')
