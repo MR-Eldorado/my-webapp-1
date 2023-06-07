@@ -2,6 +2,7 @@ import pathlib
 import zipfile
 import os
 import time
+import streamlit as st
 
 TASKS_FILE = "/Users/Bhavan_1/Pycharm-Proj2/Webapp-1/tasks-list.txt"
 COMPLETED_TASKS = "/Users/Bhavan_1/Pycharm-Proj2/Webapp-1/completed-tasks.txt"
@@ -10,7 +11,8 @@ timestamp = time.strftime('%b %d %Y')
 
 def my_clock():
     while True:
-        print(time.strftime('%b %m %Y %H:%M:%S'), end="\r", flush=True)
+        current_time = time.strftime('%b %m %Y %H:%M:%S')
+        st.text(current_time)
         time.sleep(1)
 
 
@@ -31,6 +33,7 @@ def get_todos(filename=TASKS_FILE):
         return data
     except FileNotFoundError:
         print(f"FILE: {TASKS_FILE} Not Found")
+        return []
 
 
 def get_ctodos(filename=COMPLETED_TASKS):
@@ -41,6 +44,7 @@ def get_ctodos(filename=COMPLETED_TASKS):
         return data
     except FileNotFoundError:
         print(f"FILE: {COMPLETED_TASKS} Not Found")
+        return []
 
 
 # improve the above function to validate file error before enumerating in the main.py

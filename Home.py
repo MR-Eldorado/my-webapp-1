@@ -5,6 +5,7 @@ import time
 timestamp = time.strftime('%b %d %Y')
 timestamp2 = time.strftime('%b %d %Y %H:%M:%S %p')
 
+# st.write(func.my_clock())
 st.set_page_config(layout="wide")
 st.write(timestamp2)
 st.caption(':eye: Copyright to BCM')
@@ -21,6 +22,7 @@ def add_task():
     web_task = st.session_state['new task'] + "\n"
     tasks.append(web_task)
     func.write_todos(tasks)
+    st.session_state.pop('new task')
 
 
 st.text_input(label=" ", placeholder='Add a new task', on_change=add_task, key='new task')
