@@ -4,8 +4,8 @@ import os
 import time
 import streamlit as st
 
-TASKS_FILE = "/Users/Bhavan_1/Pycharm-Proj2/Webapp-1/tasks-list.txt"
-COMPLETED_TASKS = "/Users/Bhavan_1/Pycharm-Proj2/Webapp-1/completed-tasks.txt"
+TASKS_FILE = "tasks-list.txt"
+COMPLETED_TASKS = "completed-tasks.txt"
 timestamp = time.strftime('%b %d %Y')
 
 
